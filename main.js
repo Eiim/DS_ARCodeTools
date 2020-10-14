@@ -80,6 +80,81 @@ document.addEventListener("DOMContentLoaded", function() {
 							mode = "main";
 							prev = [];
 						break;
+						case "loff":
+							outText += "Load offset register from 0x"+prev[0]+" + offset\n";
+							mode = "main";
+							prev = [];
+						break;
+						case "rep":
+							outText += "Repeat block 0x"+word+" times\n"
+							mode = "main";
+							prev = [];
+						break;
+						case "endif":
+							outText += "End most recent conditional block\n";
+							mode = "main";
+							prev = [];
+						break;
+						case "endrep":
+							outText += "End current repeat block and any conditionals within block\n";
+							mode = "main";
+							prev = [];
+						break;
+						case "endcode":
+							outText += "End current repeat block, any other conditionals, sets offset and stored to 0\n";
+							mode = "main";
+							prev = [];
+						break;
+						case "setoff":
+							outText += "Set offset register to 0x"+word+"\n";
+							mode = "main";
+							prev = [];
+						break;
+						case "setoff":
+							outText += "Set stored register to 0x"+word+"\n";
+							mode = "main";
+							prev = [];
+						break;
+						case "32sto4":
+							outText += "Saves 32 bits from stored to 0x"+word+" + offset, increments offset by 4\n";
+							mode = "main";
+							prev = [];
+						break;
+						case "16sto2":
+							outText += "Saves bottom 16 bits from stored to 0x"+word+" + offset, increments offset by 2\n";
+							mode = "main";
+							prev = [];
+						break;
+						case "8sto1":
+							outText += "Saves bottom 8 bits from stored to 0x"+word+" + offset, increments offset by 1\n";
+							mode = "main";
+							prev = [];
+						break;
+						case "32losto":
+							outText += "Load stored with 32 bits from 0x"+word+" + offset\n";
+							mode = "main";
+							prev = [];
+						break;
+						case "16losto":
+							outText += "Load stored with 16 bits from 0x"+word+" + offset\n";
+							mode = "main";
+							prev = [];
+						break;
+						case "8losto":
+							outText += "Load stored with 8 bits from 0x"+word+" + offset\n";
+							mode = "main";
+							prev = [];
+						break;
+						case "addoff":
+							outText += "Add 0x"+word+" to offset\n";
+							mode = "main";
+							prev = [];
+						break;
+						case "memcop":
+							outText += "Copy 0x"+word+" bytes from addresses starting at offset to addresses starting at 0x"+prev[0]+"\n";
+							mode = "main";
+							prev = [];
+						break;
 					}
 					word = "";
 				}
@@ -125,7 +200,7 @@ function getMainFromPrefix(word) {
 		case "B":
 		mode = "loff"; prev = word.substr(1); break;
 		case "C":
-		mode = "rep"; prev = word.substr(1); break;
+		mode = "rep"; break;
 		case "D":
 			switch(word.charAt(1).toUpperCase()) {
 				case "0":
@@ -145,14 +220,17 @@ function getMainFromPrefix(word) {
 				case "7":
 				mode = "16sto2"; break;
 				case "8":
-				mode = "32sto1"; break;
+				mode = "8sto1"; break;
 				case "9":
 				mode = "32losto"; break;
 				case "A":
 				mode = "16losto"; break;
 				case "B":
 				mode = "8losto"; break;
+				case "C":
+				mode = "addoff"; break;
 			}
+		break;
 		case "E":
 		mode = "memwr1"; prev = word.substr(1); break;
 		case "F":
