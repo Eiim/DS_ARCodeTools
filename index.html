@@ -1,22 +1,22 @@
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
-		<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet"> 
-		<script src="main.js"></script>
 		<meta charset="UTF-8">
+		<meta name="description" content="DS Action Replay Code Explainer">
+		<meta name="keywords" content="DS, Action Replay, decode, explain">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+		<title>DS Action Replay Code Explainer</title>
+		<script src="main.js"></script>
 		<style>
 		html, table, td, textarea {
 			height: 100%;
-			overflow-x: auto;
 		}
 		body {
 			height: calc(100% - 16px);
 		}
 		#intd {
 			width: 20ch;
-		}
-		#outtd {
-			/*width: 66%;*/
 		}
 		textarea, table {
 			width:100%;
@@ -28,7 +28,6 @@
 			border: 1px solid black;
 			overflow: auto;
 			resize: none;
-			rows: 32;
 		}
 		</style>
 	</head>
@@ -36,10 +35,10 @@
 		<table>
 		<tr>
 		<td id="intd">
-			<textarea id="input"></textarea>
+			<label>Input AR Code<textarea id="input"></textarea></label>
 		</td>
 		<td id="outtd">
-			<textarea disabled id="output"></textarea>
+			<label>Output explanation<textarea disabled id="output"></textarea></label>
 		</td>
 		</tr>
 		</table>

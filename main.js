@@ -1,4 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
+	if(innerWidth < 1000) {
+		var e = document.createElement('p');
+		e.textContent = "Not designed for mobile devices";
+		e.style.color = "red";
+		var body = document.getElementsByTagName("body")[0];
+		body.insertBefore(e, body.firstChild);
+	}
 	document.getElementById("input").addEventListener("input", function() {
 		var inText = document.getElementById("input").value;
 		var word = "";
