@@ -3,23 +3,36 @@
 	<head>
 		<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet"> 
 		<style>
+		html, table, td, textarea {
+			height: 100%;
+		}
+		body {
+			height: calc(100% - 16px);
+		}
 		textarea, table {
 			width:100%;
 			font-family: 'Source Code Pro', monospace;
 			font-size: 18px;
 		}
+		textarea {
+			background-color: white;
+			border: 1px solid black;
+			overflow: auto;
+			resize: none;
+			rows: 32;
+		}
 		</style>
 	</head>
 	<body>
 		<table>
-			<tr>
-				<td>
-					<textarea rows="24"></textarea>
-				</td>
-				<td>
-					<textarea rows="24"></textarea>
-				</td>
-			</tr>
+		<tr>
+		<td>
+			<textarea></textarea>
+		</td>
+		<td>
+			<textarea disabled></textarea>
+		</td>
+		</tr>
 		</table>
 	</body>
 </html>
