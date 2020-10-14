@@ -34,49 +34,49 @@ document.addEventListener("DOMContentLoaded", function() {
 						break;
 						case "32lt":
 							var dest = prev[0] == "0000000" ? "offset" : "0x"+prev[0];
-							outText += "32-bit less than: execute block if "+dest+" < 0x"+word.padStart(8,"0")+"\n";
+							outText += "32-bit less than: execute block if value at "+dest+" < 0x"+word.padStart(8,"0")+"\n";
 							mode = "main";
 							prev = [];
 						break;
 						case "32gt":
 							var dest = prev[0] == "0000000" ? "offset" : "0x"+prev[0];
-							outText += "32-bit greater than: execute block if "+dest+" > 0x"+word+"\n";
+							outText += "32-bit greater than: execute block if value at "+dest+" > 0x"+word+"\n";
 							mode = "main";
 							prev = [];
 						break;
 						case "32eq":
 							var dest = prev[0] == "0000000" ? "offset" : "0x"+prev[0];
-							outText += "32-bit equal to: execute block if "+dest+" = 0x"+word+"\n";
+							outText += "32-bit equal to: execute block if value at "+dest+" = 0x"+word+"\n";
 							mode = "main";
 							prev = [];
 						break;
 						case "32neq":
 							var dest = prev[0] == "0000000" ? "offset" : "0x"+prev[0];
-							outText += "32-bit not equal to: execute block if "+dest+" != 0x"+word+"\n";
+							outText += "32-bit not equal to: execute block if value at "+dest+" != 0x"+word+"\n";
 							mode = "main";
 							prev = [];
 						break;
 						case "16lt":
 							var dest = prev[0] == "0000000" ? "offset" : "0x"+prev[0];
-							outText += "16-bit less than: execute block if "+dest+" masked by 0x"+word.substr(0,4)+" < 0x"+word.substr(4)+"\n";
+							outText += "16-bit less than: execute block if value at "+dest+" masked by 0x"+word.substr(0,4)+" < 0x"+word.substr(4)+"\n";
 							mode = "main";
 							prev = [];
 						break;
 						case "16gt":
 							var dest = prev[0] == "0000000" ? "offset" : "0x"+prev[0];
-							outText += "16-bit greater than: execute block if "+dest+" masked by 0x"+word.substr(0,4)+" > 0x"+word.substr(4)+"\n";
+							outText += "16-bit greater than: execute block if value at "+dest+" masked by 0x"+word.substr(0,4)+" > 0x"+word.substr(4)+"\n";
 							mode = "main";
 							prev = [];
 						break;
 						case "16eq":
 							var dest = prev[0] == "0000000" ? "offset" : "0x"+prev[0];
-							outText += "16-bit greater than: execute block if "+dest+" masked by 0x"+word.substr(0,4)+" = 0x"+word.substr(4)+"\n";
+							outText += "16-bit greater than: execute block if value at "+dest+" masked by 0x"+word.substr(0,4)+" = 0x"+word.substr(4)+"\n";
 							mode = "main";
 							prev = [];
 						break;
 						case "16neq":
 							var dest = prev[0] == "0000000" ? "offset" : "0x"+prev[0];
-							outText += "16-bit greater than: execute block if "+dest+" masked by 0x"+word.substr(0,4)+" != 0x"+word.substr(4)+"\n";
+							outText += "16-bit greater than: execute block if value at "+dest+" masked by 0x"+word.substr(0,4)+" != 0x"+word.substr(4)+"\n";
 							mode = "main";
 							prev = [];
 						break;
