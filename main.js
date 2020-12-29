@@ -203,7 +203,7 @@ function getMainFromPrefix(word) {
 		case "9":
 		mode = "16eq"; prev = word.substr(1); break;
 		case "A":
-		mode = "16new"; prev = word.substr(1); break;
+		mode = "16neq"; prev = word.substr(1); break;
 		case "B":
 		mode = "loff"; prev = word.substr(1); break;
 		case "C":
