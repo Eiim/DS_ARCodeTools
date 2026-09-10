@@ -117,7 +117,12 @@ document.addEventListener("DOMContentLoaded", function() {
 							mode = "main";
 							prev = [];
 						break;
-						case "setoff":
+						case "addsto":
+							outText += "Add 0x"+word+" to stored register\n";
+							mode = "main";
+							prev = [];
+						break;
+						case "setsto":
 							outText += "Set stored register to 0x"+word+"\n";
 							mode = "main";
 							prev = [];
